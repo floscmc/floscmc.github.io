@@ -1,8 +1,21 @@
-<html>
-  <head>
-    <script src="https://floscmc.github.io/thunkableWebviewerExtension.js" </script>
-  </head>
-  <body>
-  <h1>Hi</h1>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Viewer Example</title>
+    <script src="https://floscmc.github.io/thunkableWebviewerExtension.js"></script>
+</head>
+<body>
+    <h1>Hello from Web Viewer</h1>
+    <script>
+        // 接收来自 Thunkable 应用的消息
+        ThunkableWebviewerExtension.receiveMessage(function(message) {
+            alert("收到消息：" + message);
+        });
+
+        // 向 Thunkable 应用发送消息
+        ThunkableWebviewerExtension.postMessage("Hello from Web");
+    </script>
+</body>
 </html>
